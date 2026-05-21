@@ -40,10 +40,6 @@ html, body {
   50%      { transform: translate(30px, -40px) scale(1.08); }
 }
 
-/* ---------- Glassmorphism utilitário ----------
-   Backdrop-filter precisa de fundo semi-transparente p/ funcionar.
-   Usamos rgba(var(--glass-rgb), var(--glass-alpha)) para que tema
-   claro/escuro reaproveitem a mesma regra. */
 .glass {
   background: rgba(var(--glass-rgb), var(--glass-alpha));
   border: 1px solid var(--glass-border);
@@ -322,9 +318,7 @@ main {
   transform: translateY(0);
 }
 
-/* ---------- Otimização Mobile ----------
-   backdrop-filter é caro em GPUs móveis. Reduzimos o blur
-   e desligamos os blobs animados em telas pequenas. */
+/* ---------- Otimização Mobile ---------- */
 @media (max-width: 640px) {
   .glass {
     backdrop-filter: blur(10px) saturate(130%);
